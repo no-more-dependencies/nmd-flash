@@ -1,0 +1,102 @@
+nmd-flash-container {
+	--nmd-flash-width: 600px;
+	--nmd-flash-margin: .6em;
+	--nmd-flash-margin-top-bottom: var(--nmd-flash-margin);
+	--nmd-flash-margin-left-right: var(--nmd-flash-margin);
+	--nmd-flash-margin-top: var(--nmd-flash-margin-top-bottom);
+	--nmd-flash-margin-bottom: var(--nmd-flash-margin-top-bottom);
+	--nmd-flash-margin-right: var(--nmd-flash-margin-left-right);
+	--nmd-flash-margin-left: var(--nmd-flash-margin-left-right);
+
+	position: fixed;
+	right: 0;
+	width: var(--nmd-flash-width);
+	max-width: 100%;
+	display: block;
+	overflow: hidden;
+	z-index: 1;
+}
+
+nmd-flash {
+	border-radius: .3em;
+	display: flex;
+	align-items: baseline;
+	border-left: .6em solid rgba(0, 0, 0, .1);
+	overflow: hidden;
+	color: white;
+	margin: var(--nmd-flash-margin-top) var(--nmd-flash-margin-right) var(--nmd-flash-margin-bottom) var(--nmd-flash-margin-left);
+	animation: __nmd-flash__flashIn .3s linear;
+
+	/* default type info*/
+	background-color: rgb(36, 130, 218);
+
+	button {
+		background-color: rgba(0, 0, 0, .1);
+		font-family: inherit;
+		font-size: 1.2em;
+		font-weight: bolder;
+		align-self: stretch;
+		color: white;
+		border: none;
+		outline: none;
+		padding: 0 .7em;
+		cursor: pointer;
+	}
+
+	button::before {
+		content: "\d7";
+	}
+
+	button:hover {
+		background-color: rgba(0, 0, 0, .2);
+	}
+
+	span {
+		padding: .6em 0;
+		flex-grow: 1;
+		margin: 0 .6em;
+	}
+
+	&[dismissed] {
+		animation: __nmd-flash__flashOut .5s forwards;
+		animation-timing-function: linear;
+		transition: 1s;
+	}
+
+	&[type=warning] {
+		background-color: rgb(243, 133, 30);
+	}
+
+	&[type=fail] {
+		background-color: rgb(236, 31, 31);
+	}
+
+	&[type=success] {
+		background-color: rgb(66, 202, 84);
+	}
+}
+
+/* Key FRAMES */
+@keyframes __nmd-flash__flashIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes __nmd-flash__flashOut {
+	80% {
+		transform: translateX(calc(100% + var(--nmd-flash-margin-right)));
+		height: var(--height);
+		margin: var(--nmd-flash-margin-top) var(--nmd-flash-margin-right) var(--nmd-flash-margin-bottom) var(--nmd-flash-margin-left);
+	}
+
+	100% {
+		transform: translateX(calc(100% + var(--nmd-flash-margin-right)));
+		height: 0;
+		margin: 0;
+	}
+}

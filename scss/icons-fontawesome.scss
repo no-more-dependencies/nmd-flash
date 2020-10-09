@@ -1,0 +1,24 @@
+nmd-flash {
+	&::before {
+		box-sizing: content-box;
+		font-family: "Font Awesome 5 Free";
+		content: "\f06a";
+		font-weight: 900;
+		padding-left: .7em;
+		
+		/* Default type info */
+		content: "\f05a";
+	}
+
+	&[type=warning]::before {
+		content: "\f06a";
+	}
+
+	&[type=fail]::before {
+		content: "\f057";
+	}
+
+	&[type=success]::before {
+		content: "\f058";
+	}
+}
