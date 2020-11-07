@@ -1,4 +1,4 @@
-# nmd-flash
+# nmd-flash [![npm](https://img.shields.io/npm/v/nmd-flash?style=for-the-badge)](https://www.npmjs.com/package/nmd-flash)
 
 Web component for displaying styled and animated messages.
 
