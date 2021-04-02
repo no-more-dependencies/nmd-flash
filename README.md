@@ -2,6 +2,8 @@
 
 Web component for displaying styled and animated messages.
 
+[Demo](https://no-more-dependencies.github.io/#nmd-flash)
+
 ```
 <nmd-flash-container>
 	<nmd-flash type="success">
