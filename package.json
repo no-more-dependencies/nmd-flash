@@ -1,6 +1,6 @@
 {
 	"name": "nmd-flash",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Web component for messages.",
 	"main": "./js/main.js",
 	"browser": "./dist/nmd-flash.js",
