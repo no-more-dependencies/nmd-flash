@@ -30,7 +30,7 @@ nmd-flash {
 	/* default type info*/
 	background-color: rgb(36, 130, 218);
 
-	button {
+	&::part(close-button) {
 		background-color: rgba(0, 0, 0, .1);
 		font-family: inherit;
 		font-size: 1.2em;
@@ -43,15 +43,15 @@ nmd-flash {
 		cursor: pointer;
 	}
 
-	button::before {
+	&::part(close-button)::before {
 		content: "\d7";
 	}
 
-	button:hover {
+	&::part(close-button):hover {
 		background-color: rgba(0, 0, 0, .2);
 	}
 
-	span {
+	&::part(text) {
 		padding: .6em 0;
 		flex-grow: 1;
 		margin: 0 .6em;

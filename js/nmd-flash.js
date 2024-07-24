@@ -1,22 +1,17 @@
-import HTMLParsedElement from 'html-parsed-element';
 import NmdFlashContainer from './nmd-flash-container';
 
 const msgTemplate = document.createRange().createContextualFragment(/*html*/`
-<span>
+<span part="text">
 	<slot></slot>
 </span>
-<button type="button"></button>`);
+<button type="button" part="close-button"></button>`);
 
-export default class NmdFlash extends HTMLParsedElement {
+export default class NmdFlash extends HTMLElement {
 	/**
 	 * Adds message to default container. @see {@link NmdFlashContainer} for more info and parameters.
 	 */
 	static add() {
 		NmdFlashContainer.add.apply(null, arguments);
-	}
-
-	constructor() {
-		super();
 	}
 
 	static get observedAttributes() {
@@ -33,18 +28,14 @@ export default class NmdFlash extends HTMLParsedElement {
 		}
 	}
 
-	parsedCallback() {
+	connectedCallback() {
+		const shadowRoot = this.attachShadow({mode: "open"});
 		let fragment = msgTemplate.cloneNode(true);
-		let contentElement = fragment.querySelector("slot");
-		while (this.childNodes.length > 0) {
-			contentElement.parentNode.appendChild(this.childNodes[0]);
-		}
-		contentElement.remove();
-		this.appendChild(fragment);
+		shadowRoot.appendChild(fragment);
 
-		this._messageElement = this.querySelector("span");
+		this._messageElement = shadowRoot.querySelector("span");
 
-		this.querySelector("button").addEventListener("click", (e) => {
+		shadowRoot.querySelector("button").addEventListener("click", (e) => {
 			this.dismiss();
 		});
 	}
