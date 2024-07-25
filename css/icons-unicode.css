@@ -1,15 +1,4 @@
 nmd-flash {
-	&::before {
-		box-sizing: content-box;
-		font-weight: bolder;
-		padding-left: .7em;
-		width: 1em;
-		text-align: center;
-
-		/* Default type info */
-		content: "\2139";
-	}
-
 	&[type=warning]::before {
 		content: "\26a0";
 		font-weight: normal;
@@ -22,4 +11,15 @@ nmd-flash {
 	&[type=success]::before {
 		content: "\2714";
 	}
+}
+
+nmd-flash::before {
+	box-sizing: content-box;
+	font-weight: bolder;
+	padding-left: .7em;
+	width: 1em;
+	text-align: center;
+
+	/* Default type info */
+	content: "\2139";
 }

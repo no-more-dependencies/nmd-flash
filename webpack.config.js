@@ -4,11 +4,11 @@ module.exports = {
 		"nmd-flash": __dirname + "/js/webpack-entry.js",
 		"nmd-flash-fontawesome-icons": [
 			__dirname + "/js/webpack-entry.js",
-			__dirname + "/scss/icons-fontawesome.scss"
+			__dirname + "/css/icons-fontawesome.css"
 		],
 		"nmd-flash-unicode-icons": [
 			__dirname + "/js/webpack-entry.js",
-			__dirname + "/scss/icons-unicode.scss"
+			__dirname + "/css/icons-unicode.css"
 		]
 	},
 	output: {
@@ -18,29 +18,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					'style-loader',
-					{
-						loader: "css-loader",
-						options: {
-							importLoaders: 1
-						}
-					}, {
-						loader: "sass-loader",
-					}
-				]
-			}, {
 				test: /\.css$/i,
-				use: [
-					'style-loader',
-					{
-						loader: "css-loader",
-						options: {
-							importLoaders: 1
-						}
-					}
-				]
+				use: ["style-loader", "css-loader"]
 			}
 		]
 	}

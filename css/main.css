@@ -59,14 +59,14 @@ nmd-flash {
 		outline-offset: -.4em;
 		padding: 0 .7em;
 		cursor: pointer;
+	}
 
-		&::before {
-			content: "\d7";
-		}
+	&::part(close-button)::before {
+		content: "\d7";
+	}
 
-		&:hover {
-			background-color: rgba(0, 0, 0, .2);
-		}
+	&::part(close-button):hover {
+		background-color: rgba(0, 0, 0, .2);
 	}
 
 	&::part(text) {

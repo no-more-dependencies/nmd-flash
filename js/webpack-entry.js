@@ -1,6 +1,6 @@
 import NmdFlash from "./nmd-flash";
 import NmdFlashContainer from "./nmd-flash-container";
-import "../scss/main.scss";
+import "../css/main.css";
 
 window.NmdFlash = NmdFlash;
 window.NmdFlashContainer = NmdFlashContainer;
