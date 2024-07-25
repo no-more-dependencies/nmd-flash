@@ -27,6 +27,10 @@ export default class NmdFlashContainer extends HTMLElement {
 			defaultContainer = this;
 	}
 
+	connectedCallback() {
+		this.ariaLive = "polite";
+	}
+
 	/**
 	 * Creates new message and appends it to this container.
 	 * @param {string} message -  text of message, if this contains HTML tags, also set isMessage to true

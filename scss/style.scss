@@ -30,35 +30,6 @@ nmd-flash {
 	/* default type info*/
 	background-color: rgb(36, 130, 218);
 
-	&::part(close-button) {
-		background-color: rgba(0, 0, 0, .1);
-		font-family: inherit;
-		font-size: 1.2em;
-		font-weight: bolder;
-		align-self: stretch;
-		color: white;
-		border: none;
-		outline: none;
-		padding: 0 .7em;
-		cursor: pointer;
-	}
-
-	&::part(close-button)::before {
-		content: "\d7";
-	}
-
-	&::part(close-button):hover {
-		background-color: rgba(0, 0, 0, .2);
-	}
-
-	&::part(text) {
-		padding: .6em 0;
-		flex-grow: 1;
-		margin: 0 .6em;
-		overflow-wrap: break-word;
-		overflow: hidden;
-	}
-
 	&[dismissed] {
 		animation: __nmd-flash__flashOut .5s forwards;
 		animation-timing-function: linear;
@@ -75,6 +46,35 @@ nmd-flash {
 
 	&[type=success] {
 		background-color: rgb(66, 202, 84);
+	}
+
+	&::part(close-button) {
+		background-color: rgba(0, 0, 0, .1);
+		font-family: inherit;
+		font-size: 1.2em;
+		font-weight: bolder;
+		align-self: stretch;
+		color: white;
+		border: none;
+		outline-offset: -.4em;
+		padding: 0 .7em;
+		cursor: pointer;
+
+		&::before {
+			content: "\d7";
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, .2);
+		}
+	}
+
+	&::part(text) {
+		padding: .6em 0;
+		flex-grow: 1;
+		margin: 0 .6em;
+		overflow-wrap: break-word;
+		overflow: hidden;
 	}
 }
 

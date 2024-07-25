@@ -4,7 +4,7 @@ const msgTemplate = document.createRange().createContextualFragment(/*html*/`
 <span part="text">
 	<slot></slot>
 </span>
-<button type="button" part="close-button"></button>`);
+<button type="button" part="close-button" aria-label="Close"></button>`);
 
 export default class NmdFlash extends HTMLElement {
 	/**
@@ -29,6 +29,8 @@ export default class NmdFlash extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.role = this.role ?? "alert";
+		this.ariaAtomic = this.ariaAtomic ?? "true";
 		const shadowRoot = this.attachShadow({mode: "open"});
 		let fragment = msgTemplate.cloneNode(true);
 		shadowRoot.appendChild(fragment);
