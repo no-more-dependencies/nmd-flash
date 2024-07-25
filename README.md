@@ -46,8 +46,13 @@ msg.dismiss();
 
 Just import one of these in your document:
 
- * `dist/nmd-flash.js` (includes css styles, without icons)
- * `dist/nmd-flash-unicode-icons.js` (same as above but with unicode icons, but they are kinda lame)
- * `dist/nmd-flash-fontawesome-icons.js` (fontawesome icons support, but you need to load fontawesome in your document yourself)
+ * `dist/nmd-flash-style.js` (includes css styles, without icons)
+ * `dist/nmd-flash-style-unicode-icons.js` (same as above but with unicode icons, but they are kinda lame)
+ * `dist/nmd-flash-style-fontawesome-icons.js` (fontawesome icons support, but you need to load fontawesome in your document yourself)
 
- If you want to import just classes without registering custom elements, import `js/main.js`.
+ Alternatively, if you don't want to have the CSS included in the JS files, import these:
+
+ * `dist/nmd-flash.js`
+ * `css/main.css`
+ * `css/icons-unicode.css`
+ * `css/icons-fontawesome.css`

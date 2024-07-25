@@ -1,13 +1,14 @@
 module.exports = {
 	mode: "production",
 	entry: {
-		"nmd-flash": __dirname + "/js/webpack-entry.js",
-		"nmd-flash-fontawesome-icons": [
-			__dirname + "/js/webpack-entry.js",
+		"nmd-flash": __dirname + "/js/main.js",
+		"nmd-flash-style": __dirname + "/js/main-style.js",
+		"nmd-flash-style-fontawesome-icons": [
+			__dirname + "/js/main-style.js",
 			__dirname + "/css/icons-fontawesome.css"
 		],
-		"nmd-flash-unicode-icons": [
-			__dirname + "/js/webpack-entry.js",
+		"nmd-flash-style-unicode-icons": [
+			__dirname + "/js/main-style.js",
 			__dirname + "/css/icons-unicode.css"
 		]
 	},
