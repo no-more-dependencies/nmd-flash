@@ -8,13 +8,15 @@ nmd-flash-container {
 	--nmd-flash-margin-right: var(--nmd-flash-margin-left-right);
 	--nmd-flash-margin-left: var(--nmd-flash-margin-left-right);
 
-	position: fixed;
-	right: 0;
-	width: var(--nmd-flash-width);
-	max-width: 100%;
-	display: block;
-	overflow: hidden;
-	z-index: 1;
+	&:not([inline]) {
+		position: fixed;
+		right: 0;
+		width: var(--nmd-flash-width);
+		max-width: 100%;
+		display: block;
+		overflow: hidden;
+		z-index: 1;
+	}
 }
 
 nmd-flash {
