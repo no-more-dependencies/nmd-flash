@@ -1,0 +1,8 @@
+{
+	"html.customData": [
+		"./manifests/vscode.html-custom-data.json"
+	],
+	"css.customData": [
+		"./manifests/vscode.css-custom-data.json"
+	]
+}

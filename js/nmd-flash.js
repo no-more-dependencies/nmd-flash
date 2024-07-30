@@ -6,12 +6,24 @@ const msgTemplate = document.createRange().createContextualFragment(/*html*/`
 </span>
 <button type="button" part="dismiss-button" aria-label="Close"></button>`);
 
+/**
+ * @tag nmd-flash
+ * @slot - content of the message
+ * @attribute {"info"|"warning"|"fail"|"success"} type
+ * @attribute {?number} auto-dismiss - auto close timeout in ms
+ * @csspart text
+ * @csspart dismiss-button
+ */
 export default class NmdFlash extends HTMLElement {
 	/**
-	 * Adds message to default container. @see {@link NmdFlashContainer} for more info and parameters.
+	 * Creates new message and appends it to this container.
+	 * @param {string} message -  text of message, if this contains HTML tags, also set isMessage to true
+	 * @param {string} [type=null] - message type, @see {@link NmdFlash.type}
+	 * @param {number} [autoDismiss=0] - time in ms, message will be dismissed after this time
+	 * @param {boolean} [isMessageHtml=false] - set this to true if message contains HTML tags
 	 */
 	static add() {
-		NmdFlashContainer.add.apply(null, arguments);
+		NmdFlashContainer.add(...arguments);
 	}
 
 	static get observedAttributes() {
