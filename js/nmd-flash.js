@@ -4,7 +4,7 @@ const msgTemplate = document.createRange().createContextualFragment(/*html*/`
 <span part="text">
 	<slot></slot>
 </span>
-<button type="button" part="close-button" aria-label="Close"></button>`);
+<button type="button" part="dismiss-button" aria-label="Close"></button>`);
 
 export default class NmdFlash extends HTMLElement {
 	/**

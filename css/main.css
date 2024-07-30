@@ -48,7 +48,7 @@ nmd-flash {
 		background-color: rgb(66, 202, 84);
 	}
 
-	&::part(close-button) {
+	&::part(dismiss-button) {
 		background-color: rgba(0, 0, 0, .1);
 		font-family: inherit;
 		font-size: 1.2em;
@@ -61,11 +61,11 @@ nmd-flash {
 		cursor: pointer;
 	}
 
-	&::part(close-button)::before {
+	&::part(dismiss-button)::before {
 		content: "\d7";
 	}
 
-	&::part(close-button):hover {
+	&::part(dismiss-button):hover {
 		background-color: rgba(0, 0, 0, .2);
 	}
 
